@@ -7,6 +7,6 @@ app.listen(port, () => {
     console.log('Just testing');
 });
 
-app.get(port, () => {
-    console.log('Just testing');
+app.get('/', (req, res) => {
+    res.send('Hello');
 });
