@@ -8,5 +8,5 @@ app.listen(port, () => {
 });
 
 app.get('/', (req, res) => {
-    res.send('Hello');
+    res.send(JSON.stringify({hola: "Hola mundo"}));
 });
