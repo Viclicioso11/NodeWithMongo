@@ -1,0 +1,15 @@
+{
+  "name": "package.json",
+  "version": "1.0.0",
+  "description": "Testing a first API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "Viclicioso11",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
