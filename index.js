@@ -1,4 +1,5 @@
 const express = require('express');
+const users = require('./routes/users');
 const app = express();
 
 const port = process.env.PORT || 3000;
@@ -11,3 +12,5 @@ app.get('/', (req, res) => {
     res.type('json');
     res.send(JSON.stringify({hola: "Hola mundo"}));
 });
+
+app.use('/users', users);
