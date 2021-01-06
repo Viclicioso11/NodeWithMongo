@@ -1,6 +1,7 @@
-const port = process.env.PORT || 3000;
 const express = require('express');
-const app = express.createServer();
+const app = express;
+
+const port = process.env.PORT || 3000;
 
 app.listen(port, () => {
     console.log('Just testing');
