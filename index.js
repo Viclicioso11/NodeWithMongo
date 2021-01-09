@@ -14,7 +14,7 @@ const app = express();
 // const port = environment.node_port;
 // const url = environment.db_connection;
 
-const port = process.env.PORT;
+const port = process.env.PORT || 8000; 
 const url = process.env.MONGODB_CONNECTION;
 
 
