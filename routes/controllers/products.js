@@ -4,11 +4,10 @@ const router = express.Router();
 const jsonParser = bodyParser.json();
 
 router.get('/', (req, res) => {
-    res.json({ name: "Victor", lastName: "Abud" });
+    res.json({ name: "Product1", cost: 10 });
 });
 
 router.post('/', jsonParser, (req, res) => {
-    console.log('data from req:', req.body);
     res.json({data: {
         ...req.body
     }});

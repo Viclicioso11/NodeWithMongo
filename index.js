@@ -1,16 +1,31 @@
 const express = require('express');
-const users = require('./routes/users');
-const app = express();
+const mongoose = require('mongoose');
+const config = require('./config.json');
+const router = require('./routes/routes');
 
-const port = process.env.PORT || 3000;
+const connectionParams = {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useUnifiedTopology: true 
+};
+
+const environment = config['development'];
+const app = express();
+const port = environment.node_port;
+const url = environment.db_connection;
+
+
+mongoose.connect(url, connectionParams)
+    .then( () => {
+        console.log('connected');
+    })
+    .catch( (err) => {
+        console.log('Error trying to connect', err);
+    });
 
 app.listen(port, () => {
     console.log('Just testing');
 });
 
-app.get('/', (req, res) => {
-    res.type('json');
-    res.send(JSON.stringify({hola: "Hola mundo"}));
-});
+app.use('/', router);
 
-app.use('/users', users);
