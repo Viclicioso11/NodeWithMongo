@@ -9,10 +9,13 @@ const connectionParams = {
     useUnifiedTopology: true 
 };
 
-const environment = config['development'];
+//  const environment = config['development'];
 const app = express();
-const port = environment.node_port;
-const url = environment.db_connection;
+// const port = environment.node_port;
+// const url = environment.db_connection;
+
+const port = process.env.PORT;
+const url = process.env.MONGODB_CONNECTION;
 
 
 mongoose.connect(url, connectionParams)
